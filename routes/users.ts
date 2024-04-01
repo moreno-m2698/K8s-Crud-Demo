@@ -90,9 +90,3 @@ router
     });
 
 
-
-router.param("id", (req: userRequest, res: Response, next: NextFunction, id: string) => {
-    console.log(id)
-    next();
-})
-
