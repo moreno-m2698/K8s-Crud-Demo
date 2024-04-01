@@ -1,7 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { PrismaClient } from '@prisma/client'
 import {router as userRouter} from "./routes/users"
-import {router as postsRouter} from "./routes/posts"
 
 const prisma = new PrismaClient()
 
@@ -28,7 +27,6 @@ app.set("view engine", "ejs");
 
 
 app.use("/users", userRouter);
-app.use("/posts", postsRouter);
 function logger(req: Request, res: Response, next: NextFunction) {
     console.log(req.originalUrl);
     next();

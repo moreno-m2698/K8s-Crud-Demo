@@ -14,21 +14,10 @@ datasource db {
 }
 
 model User {
-  id             String @id @default(uuid())
-  name           String
-  email          String @unique
-  profilePicture Bytes?
-  writtenPosts   Post[] @relation("WrittenPosts")
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
 
   @@index([email])
-}
-
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  author    User     @relation("WrittenPosts", fields: [authorId], references: [id])
-  authorId  String
 }
