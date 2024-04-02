@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: morenom2698/k8sdemo:2.8
+        image: morenom2698/k8sdemo:2.10
         ports:
         - containerPort: 3000
         env:

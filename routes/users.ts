@@ -2,13 +2,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 
 export const router = express.Router();
-const prisma = new PrismaClient({
-    datasources: {
-        db: {
-            url: `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@postgres:5432/${process.env.POSTGRES_DB}`
-        }
-    }
-});
+const prisma = new PrismaClient();
 interface userRequest extends Request {
     user?: any
 }
