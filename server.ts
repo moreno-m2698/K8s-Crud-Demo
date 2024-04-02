@@ -1,8 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
-import { PrismaClient } from '@prisma/client'
 import {router as userRouter} from "./routes/users"
-
-const prisma = new PrismaClient()
 
 const port = process.env.PORT || 3000;
 
@@ -34,4 +31,7 @@ function logger(req: Request, res: Response, next: NextFunction) {
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`)
+    console.log(process.env.DATABASE_URL)
+    console.log(process.env.POSTGRES_USER)
+    console.log(process.env.POSTGRES_PASSWORD)
 });

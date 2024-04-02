@@ -1,4 +1,7 @@
 node_modules
-.env
 README.md
-**/migrations
+postgres-config.yaml
+postgres-secret.yaml
+postgres.yaml
+webapp.yaml
+.gitignore
